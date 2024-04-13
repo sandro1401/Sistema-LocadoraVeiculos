@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "veiculos",
+  "info": {
+    "singularName": "veiculo",
+    "pluralName": "veiculos",
+    "displayName": "Veiculo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Marca": {
+      "type": "string",
+      "required": true
+    },
+    "Modelo": {
+      "type": "string",
+      "required": true
+    },
+    "Ano": {
+      "required": true,
+      "type": "integer"
+    },
+    "Cor": {
+      "type": "string",
+      "required": true
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "veiculos"
+    },
+    "Foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Status": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

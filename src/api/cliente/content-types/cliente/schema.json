@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clientes",
+  "info": {
+    "singularName": "cliente",
+    "pluralName": "clientes",
+    "displayName": "Cliente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "text",
+      "required": true
+    },
+    "CPF": {
+      "type": "biginteger",
+      "required": true
+    },
+    "Endereco": {
+      "type": "text",
+      "required": true
+    },
+    "Telefone": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "veiculos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::veiculo.veiculo",
+      "mappedBy": "cliente"
+    },
+    "locacaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::locacao.locacao",
+      "mappedBy": "cliente"
+    }
+  }
+}
