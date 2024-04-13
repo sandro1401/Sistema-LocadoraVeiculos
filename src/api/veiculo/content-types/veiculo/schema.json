@@ -4,29 +4,14 @@
   "info": {
     "singularName": "veiculo",
     "pluralName": "veiculos",
-    "displayName": "Veiculo"
+    "displayName": "Veiculo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Marca": {
-      "type": "string",
-      "required": true
-    },
-    "Modelo": {
-      "type": "string",
-      "required": true
-    },
-    "Ano": {
-      "required": true,
-      "type": "integer"
-    },
-    "Cor": {
-      "type": "string",
-      "required": true
-    },
     "cliente": {
       "type": "relation",
       "relation": "manyToOne",
@@ -34,15 +19,34 @@
       "inversedBy": "veiculos"
     },
     "Foto": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "Status": {
-      "type": "string",
-      "required": true
+    "locacao": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::locacao.locacao"
+    },
+    "marca_veiculo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::marca-veiculo.marca-veiculo",
+      "inversedBy": "veiculos"
+    },
+    "modelos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::modelo.modelo",
+      "mappedBy": "veiculo"
+    },
+    "status": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::status.status"
     }
   }
 }

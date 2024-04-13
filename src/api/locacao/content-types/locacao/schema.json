@@ -4,30 +4,24 @@
   "info": {
     "singularName": "locacao",
     "pluralName": "locacaos",
-    "displayName": "Locacao"
+    "displayName": "Locacao",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Locatario": {
-      "type": "string",
-      "required": true
-    },
-    "Data": {
-      "required": true,
-      "type": "datetime"
+    "status": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::status.status"
     },
     "cliente": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::cliente.cliente",
       "inversedBy": "locacaos"
-    },
-    "VeiculoLocado": {
-      "type": "string",
-      "required": true
     },
     "veiculo": {
       "type": "relation",

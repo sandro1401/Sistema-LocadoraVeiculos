@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ano_fabricacaos",
+  "info": {
+    "singularName": "ano-fabricacao",
+    "pluralName": "ano-fabricacaos",
+    "displayName": "Ano Fabricacao"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Ano": {
+      "type": "date",
+      "required": true
+    },
+    "modelos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::modelo.modelo",
+      "mappedBy": "ano_fabricacao"
+    }
+  }
+}

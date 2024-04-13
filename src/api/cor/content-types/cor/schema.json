@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cors",
+  "info": {
+    "singularName": "cor",
+    "pluralName": "cors",
+    "displayName": "Cor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Cor": {
+      "type": "string",
+      "required": true
+    },
+    "modelo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modelo.modelo",
+      "inversedBy": "cors"
+    }
+  }
+}

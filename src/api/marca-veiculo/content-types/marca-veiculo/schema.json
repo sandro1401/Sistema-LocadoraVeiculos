@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marca_veiculos",
+  "info": {
+    "singularName": "marca-veiculo",
+    "pluralName": "marca-veiculos",
+    "displayName": "Marca Veiculo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Marca": {
+      "type": "string",
+      "required": true
+    },
+    "veiculos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::veiculo.veiculo",
+      "mappedBy": "marca_veiculo"
+    },
+    "modelos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::modelo.modelo",
+      "mappedBy": "marca_veiculo"
+    }
+  }
+}

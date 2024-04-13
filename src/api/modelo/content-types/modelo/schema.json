@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modelos",
+  "info": {
+    "singularName": "modelo",
+    "pluralName": "modelos",
+    "displayName": "Modelo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Modelo": {
+      "type": "string",
+      "required": true
+    },
+    "veiculo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::veiculo.veiculo",
+      "inversedBy": "modelos"
+    },
+    "marca_veiculo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::marca-veiculo.marca-veiculo",
+      "inversedBy": "modelos"
+    },
+    "ano_fabricacao": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ano-fabricacao.ano-fabricacao",
+      "inversedBy": "modelos"
+    },
+    "cors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cor.cor",
+      "mappedBy": "modelo"
+    }
+  }
+}
